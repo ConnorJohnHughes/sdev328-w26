@@ -1,0 +1,27 @@
+{
+  "name": "mvc-app",
+  "version": "1.0.0",
+  "description": "An example MVC application structure",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshbarcher/sdev328-w26"
+  },
+  "author": {
+    "name": "Josh Archer",
+    "email": "jarcher@greenriver.edu",
+    "url": "https://projectmindforge.com"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "test": ""
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
