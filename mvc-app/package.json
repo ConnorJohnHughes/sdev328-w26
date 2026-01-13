@@ -14,7 +14,7 @@
     "url": "https://projectmindforge.com"
   },
   "scripts": {
-    "dev": "node server.js",
+    "dev": "nodemon --env-file=.env src/server.js",
     "test": ""
   },
   "dependencies": {
