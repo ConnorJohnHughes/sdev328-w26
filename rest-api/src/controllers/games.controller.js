@@ -41,7 +41,20 @@ export const updateGame = (req, res) => {
         message: "Record updated!",  
         data: updatedGame
     });
-    else return res.status(404).json({ message: `ID ${game.id} doesn't exist`});
+    else return res.status(404).json({ message: `ID ${id} doesn't exist`});
+}
+
+export const updateGamePartial = (req, res) => {
+    const { id } = req.query;
+    const updates = req.body;
+
+    const updatedGame = service.updateGamePartial(id, updates);
+    
+    if (updatedGame) return res.status(202).json({ 
+        message: "Record updated!",  
+        data: updatedGame
+    });
+    else return res.status(404).json({ message: `ID ${id} doesn't exist`});
 }
 
 export const deleteGame = (req, res) => {

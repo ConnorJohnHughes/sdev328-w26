@@ -36,8 +36,25 @@ export const updateGame = (id, updates) => {
         //found the game, update it!
         if (game.id === Number(id)) {
             games[i] = updates;
-            games[i].id = id; //make sure the id is in the updated record
+            games[i].id = Number(id); //make sure the id is in the updated record
             return games[i];
+        }
+    }
+    return null;
+} 
+
+export const updateGamePartial = (id, updates) => {
+    for (let i = 0; i < games.length; i++) {
+        const game = games[i];
+
+        //found the game, update it!
+        if (game.id === Number(id)) {
+            const merged = {
+                ...game,
+                ...updates
+            }
+            games[i] = merged;
+            return merged;
         }
     }
     return null;
