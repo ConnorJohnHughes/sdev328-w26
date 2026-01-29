@@ -29,6 +29,20 @@ export const addGame = game => {
     return true;
 }
 
+export const updateGame = (id, updates) => {
+    for (let i = 0; i < games.length; i++) {
+        const game = games[i];
+
+        //found the game, update it!
+        if (game.id === Number(id)) {
+            games[i] = updates;
+            games[i].id = id; //make sure the id is in the updated record
+            return games[i];
+        }
+    }
+    return null;
+} 
+
 function idExists(id) {
     return games.find(el => el.id === Number(id)) === null;
 }

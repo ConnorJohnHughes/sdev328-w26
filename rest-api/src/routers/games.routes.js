@@ -7,5 +7,6 @@ router.get("/", ctl.allGames);
 router.get("/game", ctl.gameById);
 router.get("/game/genres", ctl.getGenres);
 router.post("/game", ctl.addGame);
+router.put("/game/update", ctl.updateGame);
 
 export default router;

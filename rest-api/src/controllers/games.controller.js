@@ -30,3 +30,20 @@ export const addGame = (req, res) => {
     if (success) return res.status(201).json({ message: "Record added!" });
     else return res.status(409).json({ message: `ID ${game.id} already exists`});
 }
+
+export const updateGame = (req, res) => {
+    const { id } = req.query;
+    const updates = req.body;
+
+    const updatedGame = service.updateGame(id, updates);
+    
+    if (updatedGame) return res.status(202).json({ 
+        message: "Record updated!",  
+        data: updatedGame
+    });
+    else return res.status(404).json({ message: `ID ${game.id} doesn't exist`});
+}
+
+export const deleteGame = (req, res) => {
+
+}
